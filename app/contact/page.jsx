@@ -5,6 +5,14 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { motion } from 'framer-motion'
 
+// conexion a la API
+
+import { createInfo } from '@/lib/api'
+import { useForm, setValue } from 'react-hook-form'
+import { Toaster, toast } from 'sonner'
+import { useRouter } from 'next/navigation'
+
+// importar componentes de select
 import {
   Select,
   SelectContent,
@@ -36,6 +44,31 @@ const info = [
 ]
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+    reset,
+    setValue,
+  } = useForm()
+
+  const router = useRouter()
+
+  const onSubmit = async (data) => {
+    try {
+      await createInfo(data)
+      reset()
+      toast.success("Thank you! I'll be in touch within the next 24 hours")
+    } catch (error) {
+      toast.error('An error occurred while sending the message')
+      setError('email', {
+        type: 'manual',
+        message: 'An error occurred while sending the message',
+      })
+    }
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -45,11 +78,21 @@ const Contact = () => {
       }}
       className='py-6'
     >
+      <Toaster
+        position='top-right'
+        reverseOrder={false}
+        richColors
+        toastOptions={{
+          style: { color: 'accent', height: '80px' },
+          className: 'my-toast',
+        }}
+      />
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-[30px]'>
           {/* contact form */}
           <div className='xl:h-[54%] order-2 xl:order-none'>
             <form
+              onSubmit={handleSubmit(onSubmit)}
               action=''
               className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'
             >
@@ -63,44 +106,61 @@ const Contact = () => {
                 <Input
                   type='firstname'
                   placeholder='First name'
-                  required='true'
+                  {...register('firstName', { required: true })}
                 />
+                {errors.firstName && (
+                  <span className='text-accent border border-pink-100/15 min-h-8 text-sm flex items-center justify-center'>
+                    Your First name is required
+                  </span>
+                )}
                 <Input
-                  required='true'
                   type='lastname'
                   placeholder='Last name'
+                  {...register('lastName', { required: false })}
                 />
                 <Input
-                  required='true'
                   type='email'
                   placeholder='Email address'
+                  {...register('email', { required: true })}
                 />
+                {errors.email && (
+                  <span className='text-accent border border-pink-100/15 min-h-8 text-sm flex items-center justify-center'>
+                    Your email is required
+                  </span>
+                )}
                 <Input
-                  required='false'
                   type='phone'
                   placeholder='Phone number'
+                  {...register('phoneNumber', { required: false })}
                 />
               </div>
               {/* select */}
-              <Select>
+              <Select
+                {...register('service', { required: true })}
+                onValueChange={(value) => setValue('service', value)} // Usar `setValue` de `react-hook-form`
+              >
                 <SelectTrigger className='w-full'>
                   <SelectValue placeholder='Select a service' />
                 </SelectTrigger>
-
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Services</SelectLabel>
-                    <SelectItem value='est'>Web Development</SelectItem>
-                    <SelectItem value='cst'>UX/UI Design</SelectItem>
-                    <SelectItem value='mst'>SEO</SelectItem>
-                    <SelectItem value='est'>Marketing</SelectItem>
+                    <SelectItem value='webDev'>Web Development</SelectItem>
+                    <SelectItem value='uxUi'>UX/UI Design</SelectItem>
+                    <SelectItem value='seo'>SEO</SelectItem>
+                    <SelectItem value='markt'>Marketing</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              {/* textarea */}
+              {errors.service && (
+                <span className='text-accent border border-pink-100/15 min-h-10 text-sm flex items-center justify-center'>
+                  Please give me a service
+                </span>
+              )}
               <Textarea
                 className='h-[200px]'
                 placeholder='What project do you have in mind?'
+                {...register('textArea', { required: false })}
               />
               {/* button */}
               <Button size='md' className='max-w-40'>

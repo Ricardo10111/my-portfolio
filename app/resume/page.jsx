@@ -74,26 +74,6 @@ const experience = {
       position: 'Sistems Analyst',
       duration: '2014 - 2017',
     },
-    {
-      company: 'Datavision',
-      position: 'Sistems Analyst',
-      duration: '2014 - 2017',
-    },
-    {
-      company: 'Datavision',
-      position: 'Sistems Analyst',
-      duration: '2014 - 2017',
-    },
-    {
-      company: 'Datavision',
-      position: 'Sistems Analyst',
-      duration: '2014 - 2017',
-    },
-    {
-      company: 'Datavision',
-      position: 'Sistems Analyst',
-      duration: '2014 - 2017',
-    },
   ],
 }
 // education data
@@ -109,9 +89,34 @@ const education = {
       duration: '2024',
     },
     {
+      institution: 'Google',
+      degree: 'Google Cloud Essentials',
+      duration: '2024',
+    },
+    {
+      institution: 'Platzi',
+      degree: 'JavaScript',
+      duration: '2022',
+    },
+    {
       institution: 'UTEL',
       degree: 'Bachelor of Science in Computer Science',
       duration: '2020',
+    },
+    {
+      institution: 'Course',
+      degree: 'Web Design',
+      duration: '2018',
+    },
+    {
+      institution: 'Scrumstudy',
+      degree: 'Scrum Fundamentals',
+      duration: '2017',
+    },
+    {
+      institution: 'Comptia',
+      degree: 'ITIL Foundation',
+      duration: '2015',
     },
   ],
 }
