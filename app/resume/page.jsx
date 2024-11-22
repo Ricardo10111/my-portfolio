@@ -36,7 +36,7 @@ const about = {
     },
     {
       fieldName: 'Experience',
-      fieldValue: '10 years',
+      fieldValue: '3+ years',
     },
     {
       fieldName: 'Email',
@@ -57,7 +57,7 @@ const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My Experience',
   description:
-    'I have over 10 years of experience in web development. I have worked with a variety of clients and projects, ranging from small businesses to large corporations. I specialize in building websites that are fast, responsive, and user-friendly.',
+    'With over 3 years of experience in web development, I have successfully tackled a wide range of projects - from small website updates to designing and building a full CRM system from scratch. I specialize in creating websites that are fast, responsive, and user-friendly, consistently delivering solutions tailored to client needs.',
   items: [
     {
       company: 'Sica-Talento',
@@ -66,13 +66,18 @@ const experience = {
     },
     {
       company: 'SONDA',
-      position: 'Frontend Developer/ Project Manager',
+      position: 'Front-end Developer/ Project Manager',
       duration: '2017 - 2021',
     },
     {
       company: 'Datavision',
-      position: 'Sistems Analyst',
+      position: 'System Analyst',
       duration: '2014 - 2017',
+    },
+    {
+      company: 'Grupo DYCS',
+      position: 'IT Support',
+      duration: '2013 - 2014',
     },
   ],
 }
@@ -81,7 +86,7 @@ const education = {
   icon: '/assets/resume/cap.svg',
   title: 'My Education',
   description:
-    'I have a Bachelor of Science in Computer Science from the UTEL. I graduated with honors and have been working in the field ever since. I am constantly learning new technologies and improving my skills.',
+    "I hold a Bachelor's Degree in Computer Science from UTEL and have enhanced my expertise through a series of courses and bootcamps. I am committed to continuous learning, regularly updating my skills through short courses and masterclasses to stay at the forefront of emerging technologies and industry practices",
   items: [
     {
       institution: 'Kodemia',
@@ -100,7 +105,7 @@ const education = {
     },
     {
       institution: 'UTEL',
-      degree: 'Bachelor of Science in Computer Science',
+      degree: "Bachelor's Degree in Computer Science",
       duration: '2020',
     },
     {
@@ -227,7 +232,7 @@ const Resume = () => {
             <TabsContent value='experience' className='w-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 <h3 className='text-4xl font-bold'>{experience.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                <p className='max-w-[600px] text-secondary mx-auto xl:mx-0'>
                   {experience.description}
                 </p>
                 <ScrollArea className='h-[400px]'>
@@ -236,10 +241,10 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1'
+                          className='bg-secondary h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1'
                         >
-                          <span className='text-accent'>{item.duration}</span>
-                          <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>
+                          <span className='text-primary'>{item.duration}</span>
+                          <h3 className='text-xl max-w-[260px] min-h-[60px] text-center text-white'>
                             {item.position}
                           </h3>
                           <div className='flex items-center gap-3'>
@@ -259,7 +264,7 @@ const Resume = () => {
             <TabsContent value='education' className='w-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 <h3 className='text-4xl font-bold'>{education.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                <p className='max-w-[600px] text-secondary mx-auto xl:mx-0'>
                   {education.description}
                 </p>
                 <ScrollArea className='h-[400px]'>
@@ -268,10 +273,10 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1'
+                          className='bg-secondary h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1'
                         >
-                          <span className='text-accent'>{item.duration}</span>
-                          <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>
+                          <span className='text-primary'>{item.duration}</span>
+                          <h3 className='text-xl max-w-[260px] min-h-[60px] text-center text-primary'>
                             {item.degree}
                           </h3>
                           <div className='flex items-center gap-3'>
@@ -292,7 +297,7 @@ const Resume = () => {
               <div className='flex flex-col gap-[30px]'>
                 <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                   <h3 className='text-4xl font-bold'>{skills.title}</h3>
-                  <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                  <p className='max-w-[600px] text-secondary mx-auto xl:mx-0'>
                     {skills.description}
                   </p>
                 </div>
@@ -302,8 +307,8 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className='w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group'>
-                              <div className='text-6xl group-hover:text-accent transition-all duration-500'>
+                            <TooltipTrigger className='w-full h-[150px] bg-secondary rounded-xl flex justify-center items-center group'>
+                              <div className='text-6xl text-primary group-hover:text-[#aee8f3] transition-all duration-500'>
                                 {skill.icon}
                               </div>
                             </TooltipTrigger>
@@ -326,7 +331,7 @@ const Resume = () => {
             >
               <div className='flex flex-col gap-[30px]'>
                 <h3 className='text-4xl font-bold'>{about.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                <p className='max-w-[600px] text-secondary mx-auto xl:mx-0'>
                   {about.description}
                 </p>
                 <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0'>
@@ -336,7 +341,7 @@ const Resume = () => {
                         key={index}
                         className='flex items-center justify-center xl:justify-start gap-4'
                       >
-                        <span className='text-white/60'>{item.fieldName}</span>
+                        <span className='text-[#1a7da0]'>{item.fieldName}</span>
                         <span className='text-xl'>{item.fieldValue}</span>
                       </li>
                     )

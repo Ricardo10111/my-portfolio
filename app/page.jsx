@@ -17,14 +17,13 @@ const Home = () => {
             <span className='text-xl'>Full Stack Developer</span>
             <h1 className='h1 mb-6'>
               Hello I&apos;m <br />{' '}
-              <span className='text-accent'>Ricardo Lopez</span>{' '}
+              <span className='text-[#1a7da0]'>Ricardo Lopez</span>
             </h1>
-            <p className='max-w-[500px] mb-9 text-white/80'>
-              Full Stack Developer with over three years of experience in
-              enterprise web applications and more than ten years in IT.
-              Specialized in technologies like React, Angular, HTML5, CSS, and
-              JavaScript. I have a passion for learning and sharing my knowledge
-              with others.
+            <p className='max-w-[500px] mb-9 text-[#1f546b]'>
+              Full Stack Developer with 3+ years in web development and over a
+              decade in IT, skilled in JavaScript, React, Angular, Node.js,
+              MongoDB, and more. Passionate about continuous learning and
+              sharing knowledge to empower others.
             </p>
             {/* btn and socials */}
             <div className='flex flex-col xl:flex-row items-center gap-8'>

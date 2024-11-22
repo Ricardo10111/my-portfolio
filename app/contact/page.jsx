@@ -94,9 +94,11 @@ const Contact = () => {
             <form
               onSubmit={handleSubmit(onSubmit)}
               action=''
-              className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'
+              className='flex flex-col gap-6 p-10 bg-secondary rounded-xl'
             >
-              <h3 className='text-4xl text-accent'>Let&apos;s work together</h3>
+              <h3 className='text-4xl text-primary'>
+                Let&apos;s work together
+              </h3>
               <p className='text-white/60'>
                 I am available for freelance work. Connect with me via email or
                 phone.
@@ -109,7 +111,7 @@ const Contact = () => {
                   {...register('firstName', { required: true })}
                 />
                 {errors.firstName && (
-                  <span className='text-accent border border-pink-100/15 min-h-8 text-sm flex items-center justify-center'>
+                  <span className='text-red-500 border border-pink-100/15 min-h-8 text-sm flex items-center justify-center'>
                     Your First name is required
                   </span>
                 )}
@@ -124,7 +126,7 @@ const Contact = () => {
                   {...register('email', { required: true })}
                 />
                 {errors.email && (
-                  <span className='text-accent border border-pink-100/15 min-h-8 text-sm flex items-center justify-center'>
+                  <span className='text-red-500 border border-pink-100/15 min-h-8 text-sm flex items-center justify-center'>
                     Your email is required
                   </span>
                 )}
@@ -153,7 +155,7 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               {errors.service && (
-                <span className='text-accent border border-pink-100/15 min-h-10 text-sm flex items-center justify-center'>
+                <span className='text-red-500 border border-pink-100/15 min-h-10 text-sm flex items-center justify-center'>
                   Please give me a service
                 </span>
               )}
@@ -174,7 +176,7 @@ const Contact = () => {
               {info.map((item, index) => {
                 return (
                   <li key={index} className='flex items-center gap-6'>
-                    <div className='w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center'>
+                    <div className='w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-secondary text-primary rounded-md flex items-center justify-center'>
                       <div className='text-[28px]'>{item.icon}</div>
                     </div>
                     <div className='flex-1'>

@@ -23,7 +23,7 @@ const Photo = () => {
           className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'
         >
           <Image
-            src='/assets/photo2_oval_transparent.png'
+            src='/assets/lorr-portfolio.png'
             priority
             quality={100}
             fill
@@ -43,7 +43,7 @@ const Photo = () => {
             cx='253'
             cy='250'
             r='250'
-            stroke='#00ff99'
+            stroke='#0f2f40'
             strokeWidth='4'
             strokeLinecap='round'
             strokeLinejoin='round'

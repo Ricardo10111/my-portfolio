@@ -4,23 +4,23 @@ import CountUp from 'react-countup'
 
 const stats = [
   {
-    num: 10,
+    num: 3,
     text: 'Years of Experience',
   },
   {
-    num: 100,
+    num: 17,
     text: 'Projects Completed',
   },
   {
-    num: 50,
+    num: 10,
     text: 'Happy Clients',
   },
   {
-    num: 999,
+    num: 100,
     text: 'Cups of Coffee',
   },
   {
-    num: 100,
+    num: 348,
     text: 'Code commits',
   },
 ]
@@ -43,7 +43,7 @@ const Stats = () => {
                   className='text-4xl xl:text-6xl font-extrabold'
                 />
                 <p
-                  className={`${item.text.length < 15 ? 'max-w-[100px]' : 'max-w-[150px]'} leading-snug text-white/80`}
+                  className={`${item.text.length < 15 ? 'max-w-[100px]' : 'max-w-[150px]'} leading-snug text-[#0f2f40]`}
                 >
                   {item.text}
                 </p>

@@ -26,63 +26,81 @@ import WorkSliderBtns from '@/components/WorkSliderBtns'
 const projects = [
   {
     num: '01',
-    category: 'Frontend',
-    title: 'project 1',
-    description: 'This is my first project when I started learning frontend.',
-    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'JavaScript' }],
+    category: 'Frontend & Backend',
+    title: 'Interactive Branding Website',
+    description:
+      'Developed an interactive website for digital marketer Angelica Vargas, featuring touch triggers, night/day mode, and visual effects. Upcoming updates include WhatsApp and Telegram messaging integrations. Started on November 15, 2024, and 85% complete.',
+    stack: [
+      { name: 'React' },
+      { name: 'Tailwind' },
+      { name: 'JavaScript' },
+      { name: 'Next.js' },
+      { name: 'Node.js' },
+    ],
     image: '/assets/work/thumb1.png',
-    live: '',
-    github: '',
+    live: 'https://avg-portfolio-phi.vercel.app/',
+    github: 'https://github.com/Ricardo10111/avg-portfolio',
   },
   {
     num: '02',
-    category: 'Frontend',
-    title: 'project 2',
-    description: 'This is my second project when I started learning frontend.',
-    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'JavaScript' }],
+    category: 'Frontend & Backend',
+    title: 'Website Redesign, Dashboard and CRM Integration',
+    description:
+      'Redesigned the SicaTalento website to improve usability, fix errors, enhance speed, and implement SEO best practices. Currently developing a CRM and analytics dashboard with planned website integrations. With the website 60% complete and the CRM/dashboard at 45%.',
+    stack: [
+      { name: 'React' },
+      { name: 'Tailwind' },
+      { name: 'JavaScript' },
+      { name: 'Next.js' },
+      { name: 'Node.js' },
+    ],
     image: '/assets/work/thumb2.png',
     live: '',
-    github: '',
+    github: 'https://github.com/Ricardo10111/react-Sica-Talento',
   },
   {
     num: '03',
     category: 'Frontend',
-    title: 'project 3',
-    description: 'This is my third project when I started learning frontend.',
-    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'JavaScript' }],
+    title: 'Landing Page Development',
+    description:
+      'Developed a responsive landing page for ManteniPro with touch triggers, mobile optimization, and seamless CRM integrations using iframes. The project is 100% complete, ensuring smooth functionality and enhanced user experience.',
+    stack: [
+      { name: 'React' },
+      { name: 'Tailwind' },
+      { name: 'JavaScript' },
+      { name: 'Node.js' },
+    ],
     image: '/assets/work/thumb3.png',
-    live: '',
-    github: '',
+    live: 'https://mi-repositorio-omega.vercel.app/',
+    github: 'https://github.com/Ricardo10111/landing-mantenipro',
   },
   {
     num: '04',
-    category: 'Frontend',
-    title: 'project 4',
-    description: 'This is my fourth project when I started learning frontend.',
+    category: 'Frontend & Backend',
+    title: 'Blog Site Development',
+    description:
+      "Designed and developed a comprehensive blog site with user-friendly features, including user account creation, multiple sections, and forms for adding and editing posts with images. Users can react to their own and others' posts, fostering engagement and interaction.",
     stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'JavaScript' }],
-    image: '/assets/work/thumb1.png',
-    live: '',
-    github: '',
+    image: '/assets/work/thumb4.png',
+    live: 'https://devto.lorr.lat/',
+    github: 'https://github.com/Ricardo10111/Devto_challenge_react',
   },
   {
     num: '05',
-    category: 'Frontend',
-    title: 'project 5',
-    description: 'This is my fifth project when I started learning frontend.',
-    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'JavaScript' }],
-    image: '/assets/work/thumb1.png',
+    category: 'Frontend & Backend',
+    title: 'CRM Development and Integration',
+    description:
+      'Developing a CRM system for ManteniPro with seamless integration to the landing page and a mobile app. The project focuses on efficient functionality and connectivity, with CRM system development at 30% and ongoing progress toward enhancing the overall ecosystem.',
+    stack: [
+      { name: 'React' },
+      { name: 'Tailwind' },
+      { name: 'JavaScript' },
+      { name: 'Next.js' },
+      { name: 'Node.js' },
+    ],
+    image: '/assets/work/thumb5.png',
     live: '',
-    github: '',
-  },
-  {
-    num: '06',
-    category: 'Frontend',
-    title: 'project 6',
-    description: 'This is my sixth project when I started learning frontend.',
-    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'JavaScript' }],
-    image: '/assets/work/thumb1.png',
-    live: '',
-    github: '',
+    github: 'https://github.com/Mantenipro/ManteniPro-Dashboard',
   },
 ]
 
@@ -113,13 +131,17 @@ const Work = () => {
                 {project.num}
               </div>
               {/* category */}
-              <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
-                {project.category} project
+              <h2 className='text-[42px] font-bold leading-none text-secondary group-hover:text-accent transition-all duration-500 capitalize'>
+                {project.category}
               </h2>
+              {/* title */}
+              <h3 className='text-[20px] font-semibold leading-none text-secondary group-hover:text-accent transition-all duration-500 capitalize'>
+                {project.title}
+              </h3>
               {/* description */}
-              <p className='text-white/60'>{project.description}</p>
+              <p className='text-black/60 text-[16px]'>{project.description}</p>
               {/* stack */}
-              <ul className='flex gap-4'>
+              <ul className='flex flex-col xl:flex-row gap-4'>
                 {project.stack.map((item, index) => {
                   return (
                     <li key={index} className='text-xl text-accent'>
@@ -131,35 +153,60 @@ const Work = () => {
                 })}
               </ul>
               {/* border */}
-              <div className='border border-white/60'></div>
+              <div className='border border-secondary'></div>
               {/* btns */}
               <div className='flex items-center gap-4'>
                 {/* live project button */}
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
-                        <BsArrowUpRight className='text-white text-3xl group-hover:text-accent' />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live Project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.live ? (
+                  <Link
+                    href={project.live}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-secondary flex justify-center items-center group'>
+                          <BsArrowUpRight className='text-primary text-3xl group-hover:text-[#d4f4f9]' />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          {project.live ? (
+                            <p>Live project</p>
+                          ) : (
+                            <p>Coming soon</p>
+                          )}
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                ) : (
+                  <div className='w-[70px] h-[70px] rounded-full bg-secondary flex justify-center items-center group opacity-50 cursor-not-allowed'>
+                    <BsArrowUpRight className='text-primary text-3xl' />
+                  </div>
+                )}
+
                 {/* github project button */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
-                        <BsGithub className='text-white text-3xl group-hover:text-accent' />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repo</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.github ? (
+                  <Link
+                    href={project.github ? project.github : '#'}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-secondary flex justify-center items-center group'>
+                          <BsGithub className='text-primary text-3xl group-hover:text-[#d4f4f9]' />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github repo</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                ) : (
+                  <div className='w-[70px] h-[70px] rounded-full bg-secondary flex justify-center items-center group opacity-50 cursor-not-allowed'>
+                    <BsGithub className='text-primary text-3xl' />
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -192,7 +239,7 @@ const Work = () => {
               {/* pagination buttons */}
               <WorkSliderBtns
                 containerStyles='flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none'
-                btnStyles='bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] rounded-full flex justify-center items-center transition-all duration-500'
+                btnStyles='bg-secondary hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] rounded-full flex justify-center items-center transition-all duration-500'
               />
             </Swiper>
           </div>
