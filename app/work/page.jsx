@@ -38,7 +38,7 @@ const projects = [
       { name: 'Node.js' },
     ],
     image: '/assets/work/thumb1.png',
-    live: 'https://avg-portfolio-phi.vercel.app/',
+    live: 'https://avg.lorr.lat/',
     github: 'https://github.com/Ricardo10111/avg-portfolio',
   },
   {
